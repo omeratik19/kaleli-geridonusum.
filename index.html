@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO - Bursa Arşiv İmha ve Kağıt Geri Dönüşüm için optimize edilmiş -->
+    <title>Bursa Arşiv İmha | Osmangazi Kağıt Geri Dönüşüm - Kaleli Geri Dönüşüm</title>
+    <meta name="description" content="Bursa'nın Osmangazi, Orhangazi, Gemlik ve tüm ilçelerinde arşiv imha hizmeti. Kağıt, karton, naylon geri dönüşüm toplama. Veysel Karani Mah. Bursa Arşiv İmha - Hemen Arayın!">
+    <meta name="keywords" content="Bursa arşiv imha, Osmangazi arşiv imha, Orhangazi arşiv imha, Gemlik arşiv imha, Bursa kağıt toplama, Bursa geri dönüşüm, arşiv imha Bursa, kağıt geri dönüşüm Bursa, karton toplama Bursa, Kaleli Geri Dönüşüm">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kaleli Geri Dönüşüm">
+    <meta name="geo.region" content="TR-16">
+    <meta name="geo.placename" content="Bursa">
+    <link rel="canonical" href="https://www.kaleligeridonusum.com/">
+    
+    <!-- Open Graph - Sosyal medya paylaşımları için -->
+    <meta property="og:title" content="Bursa Arşiv İmha | Kaleli Geri Dönüşüm - Osmangazi">
+    <meta property="og:description" content="Bursa'nın her ilçesinde arşiv imha ve geri dönüşüm hizmeti. Kağıt, karton, naylon toplama.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Schema.org LocalBusiness - Google için yerel SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Kaleli Geri Dönüşüm",
+        "description": "Bursa Osmangazi'de arşiv imha, kağıt, karton ve naylon geri dönüşüm toplama hizmeti",
+        "url": "https://www.kaleligeridonusum.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Veysel Karani Mahallesi",
+            "addressLocality": "Osmangazi",
+            "addressRegion": "Bursa",
+            "postalCode": "16000",
+            "addressCountry": "TR"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Bursa"},
+            {"@type": "AdministrativeArea", "name": "Osmangazi"},
+            {"@type": "AdministrativeArea", "name": "Orhangazi"},
+            {"@type": "AdministrativeArea", "name": "Gemlik"}
+        ],
+        "priceRange": "$$",
+        "serviceType": ["Arşiv İmha", "Kağıt Geri Dönüşüm", "Karton Toplama", "Naylon Toplama"]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --kahve-koyu: #4a2c2a;
+            --kahve-orta: #6b4423;
+            --kahve-acik: #8b6914;
+            --kahve-cream: #c4a574;
+            --beyaz: #ffffff;
+            --beyaz-sıcak: #fdfbf7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--beyaz-sıcak);
+            color: var(--kahve-koyu);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: #ffffff;
+            color: #10254f;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
+        }
+        
+        .header-container {
+            max-width: none;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+        
+        .logo img {
+            display: block;
+            width: auto;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-menu-item {
+            position: relative;
+        }
+
+        .header-link {
+            color: #10254f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.98rem;
+            padding: 0.5rem 0.55rem;
+            border-bottom: 2px solid transparent;
+            transition: color 0.25s ease, border-color 0.25s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .header-link:hover,
+        .header-link.active {
+            color: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .has-dropdown > .header-link::after {
+            content: "⌄";
+            font-size: 0.9rem;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            min-width: 190px;
+            background: #ffffff;
+            border: 1px solid #dce5f5;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+            border-radius: 0;
+            padding: 0.45rem 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+            z-index: 50;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            color: #16315f;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.65rem 1rem;
+            border-bottom: none;
+            transition: background-color 0.22s ease, color 0.22s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f3f6fc;
+            color: #1d4ed8;
+        }
+
+        .header-menu-item:hover > .dropdown-menu,
+        .header-menu-item:focus-within > .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .header-phone a {
+            color: #10254f;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .header-phone a:hover {
+            color: #1e3a8a;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--kahve-cream);
+            color: var(--kahve-koyu);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .btn:hover {
+            background: var(--beyaz);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero - Ana Bölüm */
+        .hero {
+            color: var(--beyaz);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 1.2s ease-in-out;
+            z-index: 0;
+        }
+        
+        .hero-bg.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .hero-bg:not(.active) {
+            opacity: 0;
+            z-index: 0;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(8, 20, 45, 0.82) 0%, rgba(17, 37, 84, 0.78) 50%, rgba(4, 10, 24, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        .hero-title-effect {
+            font-size: clamp(2.1rem, 4.9vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: 0.35px;
+            position: relative;
+            display: inline-block;
+            color: #ffffff;
+            text-shadow: 0 8px 30px rgba(0, 0, 0, 0.66), 0 2px 14px rgba(0, 0, 0, 0.5), 0 0 24px rgba(120, 170, 255, 0.24);
+            animation: heroTitleIn 1.9s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+        }
+
+        @keyframes heroTitleIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-180px) translateY(22px) scale(0.92) rotate(-1.5deg);
+                filter: blur(8px);
+            }
+            82% {
+                opacity: 1;
+                transform: translateX(10px) translateY(0) scale(1.02) rotate(0.2deg);
+                filter: blur(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) translateY(0) scale(1) rotate(0);
+                filter: blur(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--kahve-cream);
+            display: block;
+            font-size: 0.9em;
+        }
+        
+        .hero .gold-text {
+            color: #86efac;
+        }
+        
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+        
+        .hero .location-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Hizmetler */
+        .services {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--kahve-koyu);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title p {
+            color: var(--kahve-orta);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--beyaz);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(74, 44, 42, 0.08);
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--kahve-cream);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(74, 44, 42, 0.12);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--kahve-acik), var(--kahve-cream));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: var(--kahve-koyu);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            color: var(--kahve-orta);
+            font-size: 0.95rem;
+        }
+        
+        .service-card li {
+            padding: 0.25rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+        
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--kahve-acik);
+            font-weight: 700;
+        }
+        
+        /* Hakkimizda */
+        .why-us {
+            background: linear-gradient(135deg, #0b1f4d 0%, #1e3a8a 100%);
+            color: var(--beyaz);
+            padding: 4rem 2rem;
+        }
+        
+        .why-us .section-title h2 {
+            color: var(--beyaz);
+        }
+        
+        .why-us .section-title p {
+            color: var(--kahve-cream);
+        }
+        
+        .about-content {
+            max-width: 1050px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .about-layout {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 1 1 62%;
+        }
+
+        .about-image {
+            flex: 1 1 38%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 14px;
+            border: 3px solid rgba(255, 255, 255, 0.22);
+            box-shadow: 0 10px 30px rgba(3, 10, 28, 0.35);
+            transform: translateX(22px);
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .about-content p {
+            color: #e8eefc;
+            font-size: 1.05rem;
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+        }
+
+        .about-text h4 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin: 1rem 0 0.6rem;
+        }
+
+        .about-text ul {
+            margin: 0 0 1.25rem 0;
+            padding-left: 1.1rem;
+        }
+
+        .about-text li {
+            color: #e8eefc;
+            font-size: 1.03rem;
+            line-height: 1.8;
+            margin-bottom: 0.35rem;
+        }
+        
+        /* Hizmet Bölgesi - SEO için önemli */
+        .coverage {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #0b1f4d 0%, #1e3a8a 100%);
+        }
+        
+        .coverage-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .coverage-content h2 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .coverage-content p {
+            color: #dbe7ff;
+        }
+        
+        .coverage-cities {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .coverage-tag {
+            background: var(--kahve-cream);
+            color: var(--kahve-koyu);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--kahve-orta), var(--kahve-acik));
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--beyaz);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+        
+        .cta-section p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-phone {
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        
+        .cta-phone a {
+            color: var(--beyaz);
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0b1f4d 0%, #1e3a8a 100%);
+            color: #dbe7ff;
+            padding: 3rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #dbe7ff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: #ffffff;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .header-nav {
+                width: 100%;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            .header-menu {
+                width: 100%;
+                min-width: 640px;
+            }
+
+            .dropdown-menu {
+                min-width: 170px;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .cta-phone {
+                font-size: 1.4rem;
+            }
+
+            .about-layout {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .about-image {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-image img {
+                max-width: 100%;
+                height: 260px;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="assets/kaleli-pp.jpeg" alt="Kaleli Geri Dönüşüm Logo">
+            </div>
+            <nav class="header-nav">
+                <ul class="header-menu">
+                    <li class="header-menu-item"><a href="index.html" class="header-link active">Ana Sayfa</a></li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="kurumsal.html" class="header-link">Kurumsal</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                            <li><a href="index.html#tesisimiz">Tesisimiz</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="hizmetlerimiz.html" class="header-link">Hizmetlerimiz</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="hizmetlerimiz.html#atik-kagit-toplama">Atık Kağıt Toplama Hizmeti</a></li>
+                            <li><a href="hizmetlerimiz.html#yerinde-tespit-degerlendirme">Yerinde Tespit ve Değerlendirme</a></li>
+                            <li><a href="hizmetlerimiz.html#siniflandirma-ayristirma">Sınıflandırma ve Ayrıştırma</a></li>
+                            <li><a href="hizmetlerimiz.html#guvenli-evrak-imhasi">Güvenli Evrak İmhası</a></li>
+                            <li><a href="hizmetlerimiz.html#geri-donusume-sevk">Geri Dönüşüme Sevk</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="urunler.html" class="header-link">Ürünler</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="urunler.html#kagit-atiklari">Kağıt Atıkları</a></li>
+                            <li><a href="urunler.html#karton-naylon">Karton & Naylon</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item"><a href="makaleler.html" class="header-link">Makaleler</a></li>
+                    <li class="header-menu-item"><a href="iletisim.html" class="header-link">İletişim</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <div class="header-phone">📞 <a href="tel:+905551234567">0XXX XXX XX XX</a></div>
+                <a href="tel:+905551234567" class="btn">Hemen Ara</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-bg active"></div>
+            <div class="hero-bg"></div>
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1 class="hero-title-effect">Kaleli Kağıt Geri Dönüşüm Toplama İstasyonu</h1>
+            </div>
+        </section>
+        
+        <section class="services" id="hizmetler">
+            <div class="section-title">
+                <h2>Neler Topluyoruz?</h2>
+                <p>Arşiv imha ve geri dönüşüm için kabul ettiğimiz malzemeler</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Kağıt</h3>
+                    <ul>
+                        <li>Arşiv Dosyaları</li>
+                        <li>Kitaplar</li>
+                        <li>A4 Kağıt</li>
+                        <li>Kuşe Kağıt</li>
+                        <li>Matbaa Kağıdı</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Karton</h3>
+                    <ul>
+                        <li>Karton Kutu</li>
+                        <li>Oluklu Mukavva</li>
+                        <li>Ambalaj Kartönü</li>
+                    </ul>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">🛍️</div>
+                    <h3>Naylon</h3>
+                    <ul>
+                        <li>Naylon Poşet</li>
+                        <li>Streç Film</li>
+                        <li>Plastik Ambalaj</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        
+        <section class="why-us" id="hakkimizda">
+            <div class="section-title">
+                <h2>Hakkımızda</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-layout">
+                    <div class="about-text">
+                        <h3>Kaleli Kağıt Geri Dönüşüm</h3>
+                        <p><strong>Bursa Arşiv İmha ve Kağıt Atık Alımı</strong></p>
+
+                        <p>Kaleli Kağıt Geri Dönüşüm, 2024 yılı Nisan ayında Bursa Osmangazi Veysel Karani’de kurulmuştur. Firmamız Bursa genelinde arşiv imha, evrak imha ve kağıt atık alımı hizmeti vermektedir.</p>
+
+                        <p>Ofislerde, okullarda, fabrikalarda ve resmi kurumlarda biriken eski evraklar, arşiv dosyaları, kullanılmayan kitaplar ve kağıt atıkları yerinden alınarak geri dönüşüme kazandırılmaktadır.</p>
+
+                        <p>Bursa’da arşiv boşaltma ve evrak imha hizmeti arayan işletmeler için hızlı, güvenilir ve düzenli çözümler sunuyoruz.</p>
+
+                        <h4>Hizmetlerimiz</h4>
+                        <ul>
+                            <li>Bursa arşiv imha hizmeti</li>
+                            <li>Evrak imha hizmeti</li>
+                            <li>Ofis kağıt atık alımı</li>
+                            <li>Okul kitap ve defter atığı alımı</li>
+                            <li>Fabrika ve işletme kağıt atığı alımı</li>
+                            <li>Yerinden kağıt toplama hizmeti</li>
+                        </ul>
+
+                        <p>Başta Osmangazi olmak üzere Nilüfer, Yıldırım ve Bursa’nın tüm ilçelerine hizmet veriyoruz.</p>
+
+                        <h4>Neden Kaleli Kağıt?</h4>
+                        <ul>
+                            <li>Yerinden alım hizmeti</li>
+                            <li>Düzenli ve planlı toplama</li>
+                            <li>Hızlı iletişim ve teklif</li>
+                            <li>Çevreye duyarlı geri dönüşüm sistemi</li>
+                            <li>Bursa merkezli güvenilir hizmet</li>
+                        </ul>
+
+                        <h4>Misyonumuz</h4>
+                        <p>İşletmelerde biriken arşiv ve kağıt atıklarını doğru şekilde toplayarak hem alan tasarrufu sağlamak hem de sürdürülebilir geri dönüşüm sürecine katkıda bulunmaktır.</p>
+
+                        <h4>Vizyonumuz</h4>
+                        <p>Bursa’da arşiv imha ve kağıt geri dönüşüm denildiğinde ilk akla gelen firma olmak.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://saydasplastik.com.tr/wp-content/uploads/2021/10/kagit-geri-donusumu-nasil-yapilir.jpg" alt="Kaleli Kağıt Geri Dönüşüm Hakkımızda Görseli">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="coverage" id="tesisimiz">
+            <div class="coverage-content">
+                <h2>Bursa'nın Her İlçesine Hizmet Veriyoruz</h2>
+                <p>Arşiv imha ve geri dönüşüm talebiniz için Osmangazi, Orhangazi, Gemlik, Nilüfer, Yıldırım ve Bursa'nın tüm ilçelerinden bize ulaşabilirsiniz.</p>
+                <div class="coverage-cities">
+                    <span class="coverage-tag">Osmangazi</span>
+                    <span class="coverage-tag">Orhangazi</span>
+                    <span class="coverage-tag">Gemlik</span>
+                    <span class="coverage-tag">Nilüfer</span>
+                    <span class="coverage-tag">Yıldırım</span>
+                    <span class="coverage-tag">İnegöl</span>
+                    <span class="coverage-tag">Mudanya</span>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Kaleli Geri Dönüşüm</h4>
+                <p>Bursa Arşiv İmha & Kağıt Geri Dönüşüm</p>
+                <p>Veysel Karani Mah. Osmangazi / Bursa</p>
+            </div>
+            <div class="footer-section">
+                <h4>Hizmetlerimiz</h4>
+                <p>Arşiv İmha</p>
+                <p>Kağıt Toplama</p>
+                <p>Karton Toplama</p>
+                <p>Naylon Toplama</p>
+            </div>
+            <div class="footer-section">
+                <h4>İletişim</h4>
+                <p><a href="tel:+905551234567">0XXX XXX XX XX</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Kaleli Geri Dönüşüm - Bursa Arşiv İmha | Osmangazi Kağıt, Karton, Naylon Geri Dönüşüm</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hero arka plan görselleri - script formatında
+        (function() {
+            var heroBgUrls = [
+                'https://arsivimha.com/wp-content/uploads/2025/05/Gemini_Generated_Image_7un3qq7un3qq7un3.jpg',
+                'https://www.atikkagitbursa.com.tr/wp-content/themes/atik-kagit/assets/images/karton1.jpg',
+                'https://kaderkagitcilik.com/wp-content/uploads/2022/09/WhatsApp-Image-2022-09-25-at-15.55.32-7.jpeg'
+            ];
+
+            var heroBgs = document.querySelectorAll('.hero-bg');
+            heroBgs.forEach(function(el, i) {
+                if (heroBgUrls[i]) el.style.backgroundImage = "url('" + heroBgUrls[i] + "')";
+            });
+
+            var current = 0;
+            function nextBg() {
+                heroBgs[current].classList.remove('active');
+                current = (current + 1) % heroBgs.length;
+                heroBgs[current].classList.add('active');
+            }
+            setInterval(nextBg, 5000);
+        })();
+    </script>
+</body>
+</html>
