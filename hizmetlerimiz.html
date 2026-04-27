@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | Kaleli Kağıt Geri Dönüşüm</title>
+    <meta name="description" content="Bursa genelinde arşiv imha, evrak imha ve kağıt atık alımı hizmetleri. Kaleli Kağıt Geri Dönüşüm ile yerinden toplama ve düzenli çözüm.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lacivert-1: #0b1f4d;
+            --lacivert-2: #1e3a8a;
+            --beyaz: #ffffff;
+            --acik: #dbe7ff;
+            --zemin: #f6f8fc;
+            --kart: #ffffff;
+            --vurgu: #c4a574;
+            --metin: #1d2330;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background: var(--zemin);
+            color: var(--metin);
+            line-height: 1.7;
+        }
+
+        header {
+            background: #ffffff;
+            color: #10254f;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .logo img {
+            display: block;
+            width: auto;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-menu-item {
+            position: relative;
+        }
+
+        .header-link {
+            color: #10254f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.98rem;
+            padding: 0.5rem 0.55rem;
+            border-bottom: 2px solid transparent;
+            transition: color 0.25s ease, border-color 0.25s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .header-link:hover,
+        .header-link.active {
+            color: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .has-dropdown > .header-link::after {
+            content: "⌄";
+            font-size: 0.9rem;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            min-width: 190px;
+            background: #ffffff;
+            border: 1px solid #dce5f5;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+            border-radius: 0;
+            padding: 0.45rem 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+            z-index: 50;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            color: #16315f;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.65rem 1rem;
+            border-bottom: none;
+            transition: background-color 0.22s ease, color 0.22s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f3f6fc;
+            color: #1d4ed8;
+        }
+
+        .header-menu-item:hover > .dropdown-menu,
+        .header-menu-item:focus-within > .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-phone a {
+            color: #10254f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.35rem;
+            background: var(--vurgu);
+            color: #3f2f1f;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--lacivert-1) 0%, var(--lacivert-2) 100%);
+            color: var(--beyaz);
+            text-align: center;
+            padding: 4rem 1.5rem 3.2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero p {
+            max-width: 860px;
+            margin: 0 auto;
+            color: var(--acik);
+            font-size: 1.05rem;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 3.2rem 1.25rem;
+        }
+
+        .section-intro {
+            text-align: center;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-intro h2 {
+            color: var(--lacivert-1);
+            font-size: clamp(1.45rem, 2.5vw, 2rem);
+            margin-bottom: 0.35rem;
+            letter-spacing: 0.02em;
+        }
+
+        .section-intro p {
+            color: #3a4966;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .service-card {
+            background: var(--kart);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.09);
+            border: 1px solid #e9eefb;
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(15, 23, 42, 0.13);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 205px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-content {
+            padding: 1.15rem 1.15rem 1.25rem;
+        }
+
+        .service-card h3 {
+            color: var(--lacivert-1);
+            font-size: 1.1rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .service-card p {
+            font-size: 0.98rem;
+            color: #2f3a50;
+            margin-bottom: 0.95rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-weight: 700;
+            color: #1f4fb8;
+            font-size: 0.93rem;
+        }
+
+        .service-link:hover {
+            color: #14357f;
+        }
+
+        .districts {
+            margin-top: 2rem;
+            background: linear-gradient(135deg, var(--lacivert-1) 0%, var(--lacivert-2) 100%);
+            border-radius: 14px;
+            padding: 1.5rem;
+            color: var(--beyaz);
+        }
+
+        .districts h2 {
+            margin-bottom: 0.65rem;
+            font-size: 1.35rem;
+        }
+
+        .districts p {
+            color: var(--acik);
+        }
+
+        .cta-band {
+            margin-top: 2rem;
+            background: linear-gradient(135deg, #0b1f4d 0%, #17357c 100%);
+            color: #ffffff;
+            border-radius: 14px;
+            padding: 1.65rem 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-band h2 {
+            font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 0.68rem 1.05rem;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn.primary {
+            background: #f6f8ff;
+            color: #123a8a;
+        }
+
+        .cta-btn.secondary {
+            background: #22c55e;
+            color: #062915;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--lacivert-1) 0%, var(--lacivert-2) 100%);
+            color: var(--acik);
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 860px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .header-nav {
+                width: 100%;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            .header-menu {
+                width: 100%;
+                min-width: 640px;
+            }
+
+            .dropdown-menu {
+                min-width: 170px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/kaleli-pp.jpeg" alt="Kaleli Geri Dönüşüm Logo"></a>
+            </div>
+            <nav class="header-nav">
+                <ul class="header-menu">
+                    <li class="header-menu-item"><a href="index.html" class="header-link">Ana Sayfa</a></li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="kurumsal.html" class="header-link">Kurumsal</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                            <li><a href="index.html#tesisimiz">Tesisimiz</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="hizmetlerimiz.html" class="header-link active">Hizmetlerimiz</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#atik-kagit-toplama">Atık Kağıt Toplama Hizmeti</a></li>
+                            <li><a href="#yerinde-tespit-degerlendirme">Yerinde Tespit ve Değerlendirme</a></li>
+                            <li><a href="#siniflandirma-ayristirma">Sınıflandırma ve Ayrıştırma</a></li>
+                            <li><a href="#guvenli-evrak-imhasi">Güvenli Evrak İmhası</a></li>
+                            <li><a href="#geri-donusume-sevk">Geri Dönüşüme Sevk</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="urunler.html" class="header-link">Ürünler</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="urunler.html#kagit-atiklari">Kağıt Atıkları</a></li>
+                            <li><a href="urunler.html#karton-naylon">Karton & Naylon</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item"><a href="makaleler.html" class="header-link">Makaleler</a></li>
+                    <li class="header-menu-item"><a href="iletisim.html" class="header-link">İletişim</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <div class="header-phone">📞 <a href="tel:+905551234567">0XXX XXX XX XX</a></div>
+                <a href="tel:+905551234567" class="btn">Hemen Ara</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Hizmetlerimiz</h1>
+            <p>Bursa genelinde arşiv imha, evrak imha ve kağıt atık alımı hizmetlerini yerinden, hızlı ve düzenli şekilde sunuyoruz.</p>
+        </section>
+
+        <section class="container">
+            <div class="section-intro">
+                <h2>Hizmet Alanlarımız</h2>
+                <p>Kurumsal atık yönetimi süreçlerinizi tek merkezden planlayarak toplama, ayrıştırma, imha ve raporlama adımlarını uçtan uca yönetiyoruz.</p>
+            </div>
+            <div class="services-grid">
+                <article class="service-card" id="atik-kagit-toplama">
+                    <img class="service-image" src="https://asrekagit.com.tr/wp-content/uploads/2025/12/atik-kagit-toplama-hizmeti.jpg" alt="Atık Kağıt Toplama Hizmeti">
+                    <div class="service-content">
+                        <h3>Atık Kağıt Toplama Hizmeti</h3>
+                        <p>Geri dönüşebilir kağıt atıklarınızı kaynağında, düzenli planlama ile toplayarak işletmenizde alan ve süreç verimliliği sağlıyoruz.</p>
+                        <a class="service-link" href="#atik-kagit-toplama">Devamını oku →</a>
+                    </div>
+                </article>
+                <article class="service-card" id="yerinde-tespit-degerlendirme">
+                    <img class="service-image" src="https://asrekagit.com.tr/wp-content/uploads/2025/12/yerinde-tespit-ve-degerlendirme.jpg" alt="Yerinde Tespit ve Değerlendirme">
+                    <div class="service-content">
+                        <h3>Yerinde Tespit ve Değerlendirme</h3>
+                        <p>Atığın türü, miktarı ve oluşum sıklığı yerinde analiz edilerek işletmenize özel toplama takvimi ve operasyon planı oluşturulur.</p>
+                        <a class="service-link" href="#yerinde-tespit-degerlendirme">Devamını oku →</a>
+                    </div>
+                </article>
+                <article class="service-card" id="siniflandirma-ayristirma">
+                    <img class="service-image" src="https://asrekagit.com.tr/wp-content/uploads/2025/12/siniflandirma-ve-ayristirma.jpg" alt="Sınıflandırma ve Ayrıştırma">
+                    <div class="service-content">
+                        <h3>Sınıflandırma ve Ayrıştırma</h3>
+                        <p>Toplanan materyaller kağıt, karton ve naylon gruplarına ayrıştırılarak geri dönüşüm verimini artıran doğru sevk süreci hazırlanır.</p>
+                        <a class="service-link" href="#siniflandirma-ayristirma">Devamını oku →</a>
+                    </div>
+                </article>
+                <article class="service-card" id="guvenli-evrak-imhasi">
+                    <img class="service-image" src="https://asrekagit.com.tr/wp-content/uploads/2025/12/guvenli-evrak-imhasi.jpg" alt="Güvenli Evrak İmhası">
+                    <div class="service-content">
+                        <h3>Güvenli Evrak İmhası</h3>
+                        <p>Gizlilik dereceli evraklarınız kontrollü süreçle imha edilerek şirket içi veri güvenliği ve yasal uyum gereksinimleri desteklenir.</p>
+                        <a class="service-link" href="#guvenli-evrak-imhasi">Devamını oku →</a>
+                    </div>
+                </article>
+                <article class="service-card" id="geri-donusume-sevk">
+                    <img class="service-image" src="https://asrekagit.com.tr/wp-content/uploads/2025/12/geri-donusume-sevk.jpg" alt="Geri Dönüşüme Sevk">
+                    <div class="service-content">
+                        <h3>Geri Dönüşüme Sevk</h3>
+                        <p>Ayrıştırılan atıklar lisanslı geri dönüşüm tesislerine sevk edilerek çevresel etki azaltılır ve materyaller ekonomiye kazandırılır.</p>
+                        <a class="service-link" href="#geri-donusume-sevk">Devamını oku →</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="districts">
+                <h2>Hizmet Bölgemiz</h2>
+                <p>Başta Osmangazi olmak üzere Nilüfer, Yıldırım ve Bursa'nın tüm ilçelerine hizmet veriyoruz.</p>
+            </div>
+
+            <section class="cta-band">
+                <h2>Geri Dönüşüm, Geleceği Dönüştürür.</h2>
+                <div class="cta-actions">
+                    <a class="cta-btn primary" href="iletisim.html">Teklif Al</a>
+                    <a class="cta-btn secondary" href="tel:+905551234567">İletişime Geç</a>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Kaleli Geri Dönüşüm - Bursa Arşiv İmha ve Kağıt Atık Alımı</p>
+    </footer>
+</body>
+</html>

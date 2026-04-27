@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler | Kaleli Kağıt Geri Dönüşüm</title>
+    <meta name="description" content="Kaleli Kağıt Geri Dönüşüm olarak topladığımız kağıt, karton ve naylon/plastik atık türleri. Bursa genelinde yerinden alım hizmeti.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lacivert-1: #0b1f4d;
+            --lacivert-2: #1e3a8a;
+            --beyaz: #ffffff;
+            --acik: #dbe7ff;
+            --zemin: #f6f8fc;
+            --kart: #ffffff;
+            --vurgu: #c4a574;
+            --metin: #1d2330;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background: var(--zemin);
+            color: var(--metin);
+            line-height: 1.7;
+        }
+
+        header {
+            background: #ffffff;
+            color: #10254f;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.12);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+
+        .logo img {
+            display: block;
+            width: auto;
+            height: 58px;
+            object-fit: contain;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-menu {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-menu-item {
+            position: relative;
+        }
+
+        .header-link {
+            color: #10254f;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.98rem;
+            padding: 0.5rem 0.55rem;
+            border-bottom: 2px solid transparent;
+            transition: color 0.25s ease, border-color 0.25s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .header-link:hover,
+        .header-link.active {
+            color: #1e3a8a;
+            border-color: #1e3a8a;
+        }
+
+        .has-dropdown > .header-link::after {
+            content: "⌄";
+            font-size: 0.9rem;
+            line-height: 1;
+            transform: translateY(-1px);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            min-width: 190px;
+            background: #ffffff;
+            border: 1px solid #dce5f5;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+            border-radius: 0;
+            padding: 0.45rem 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+            z-index: 50;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            color: #16315f;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.65rem 1rem;
+            border-bottom: none;
+            transition: background-color 0.22s ease, color 0.22s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f3f6fc;
+            color: #1d4ed8;
+        }
+
+        .header-menu-item:hover > .dropdown-menu,
+        .header-menu-item:focus-within > .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-phone a {
+            color: #10254f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.35rem;
+            background: var(--vurgu);
+            color: #3f2f1f;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--lacivert-1) 0%, var(--lacivert-2) 100%);
+            color: var(--beyaz);
+            text-align: center;
+            padding: 4rem 1.5rem 3.2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero p {
+            max-width: 860px;
+            margin: 0 auto;
+            color: var(--acik);
+            font-size: 1.05rem;
+        }
+
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 3rem 1.25rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .product-card {
+            background: var(--kart);
+            border-radius: 14px;
+            padding: 1.35rem 1.2rem;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e9eefb;
+        }
+
+        .product-card h2 {
+            color: var(--lacivert-1);
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .product-card ul {
+            margin-left: 1rem;
+        }
+
+        .product-card li {
+            margin-bottom: 0.3rem;
+            color: #2f3a50;
+            font-size: 0.98rem;
+        }
+
+        .note {
+            margin-top: 2rem;
+            background: #eef3ff;
+            border: 1px solid #d8e3ff;
+            border-radius: 12px;
+            padding: 1rem 1.1rem;
+            color: #243456;
+            font-size: 0.96rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--lacivert-1) 0%, var(--lacivert-2) 100%);
+            color: var(--acik);
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 860px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .header-nav {
+                width: 100%;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            .header-menu {
+                width: 100%;
+                min-width: 640px;
+            }
+
+            .dropdown-menu {
+                min-width: 170px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/kaleli-pp.jpeg" alt="Kaleli Geri Dönüşüm Logo"></a>
+            </div>
+            <nav class="header-nav">
+                <ul class="header-menu">
+                    <li class="header-menu-item"><a href="index.html" class="header-link">Ana Sayfa</a></li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="kurumsal.html" class="header-link">Kurumsal</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+                            <li><a href="index.html#tesisimiz">Tesisimiz</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="hizmetlerimiz.html" class="header-link">Hizmetlerimiz</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="hizmetlerimiz.html#atik-kagit-toplama">Atık Kağıt Toplama Hizmeti</a></li>
+                            <li><a href="hizmetlerimiz.html#yerinde-tespit-degerlendirme">Yerinde Tespit ve Değerlendirme</a></li>
+                            <li><a href="hizmetlerimiz.html#siniflandirma-ayristirma">Sınıflandırma ve Ayrıştırma</a></li>
+                            <li><a href="hizmetlerimiz.html#guvenli-evrak-imhasi">Güvenli Evrak İmhası</a></li>
+                            <li><a href="hizmetlerimiz.html#geri-donusume-sevk">Geri Dönüşüme Sevk</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item has-dropdown">
+                        <a href="urunler.html" class="header-link active">Ürünler</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#kagit-atiklari">Kağıt Atıkları</a></li>
+                            <li><a href="#karton-naylon">Karton & Naylon</a></li>
+                        </ul>
+                    </li>
+                    <li class="header-menu-item"><a href="makaleler.html" class="header-link">Makaleler</a></li>
+                    <li class="header-menu-item"><a href="iletisim.html" class="header-link">İletişim</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <div class="header-phone">📞 <a href="tel:+905551234567">0XXX XXX XX XX</a></div>
+                <a href="tel:+905551234567" class="btn">Hemen Ara</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Ürünler</h1>
+            <p>Bursa genelinde geri dönüşüm için topladığımız atık türleri aşağıdadır. Yerinden alım hizmeti ile hızlı çözüm sunuyoruz.</p>
+        </section>
+
+        <section class="container">
+            <div class="products-grid">
+                <article class="product-card" id="kagit-atiklari">
+                    <h2>Kağıt Atıkları</h2>
+                    <ul>
+                        <li>Arşiv dosyaları</li>
+                        <li>Evrak ve ofis kağıtları</li>
+                        <li>A4 kağıt</li>
+                        <li>Kitap ve defter</li>
+                        <li>Kuşe kağıt</li>
+                        <li>Matbaa kağıdı</li>
+                    </ul>
+                </article>
+
+                <article class="product-card" id="karton-naylon">
+                    <h2>Karton Atıkları</h2>
+                    <ul>
+                        <li>Karton kutu</li>
+                        <li>Oluklu mukavva</li>
+                        <li>Ambalaj kartonları</li>
+                        <li>Koli ve sevkiyat kartonları</li>
+                    </ul>
+                </article>
+
+                <article class="product-card">
+                    <h2>Naylon / Plastik Atıkları</h2>
+                    <ul>
+                        <li>Naylon poşet</li>
+                        <li>Streç film</li>
+                        <li>Plastik ambalaj atıkları</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="note">
+                <strong>Not:</strong> Toplama planı, atık miktarı ve lokasyona göre hazırlanır. Detaylı bilgi ve teklif için hemen arayabilirsiniz.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Kaleli Geri Dönüşüm - Bursa Arşiv İmha ve Kağıt Atık Alımı</p>
+    </footer>
+</body>
+</html>
